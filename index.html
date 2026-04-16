@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>胡涛律师Alt | 企业合规·场景化争议解决·强制执行</title>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#BFA580',
+            secondary: '#F5F5F5',
+            dark: '#1A1A1A',
+            muted: '#666666',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Microsoft YaHei', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="tailwindcss">
+    @layer utilities {
+      .card-hover { @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1; }
+      .text-gold { color: #BFA580; }
+    }
+  </style>
+</head>
+
+<body class="bg-secondary text-dark antialiased">
+
+<!-- 导航 -->
+<header class="fixed w-full top-0 left-0 bg-white z-50 shadow-sm">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="#" class="text-xl font-bold text-dark">
+        胡涛 <span class="text-primary">律师Alt</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-4">
+        <a href="#home" class="hover:text-primary">首页</a>
+        <a href="#about" class="hover:text-primary">律师简介</a>
+        <a href="#experience" class="hover:text-primary">教育背景</a>
+        <a href="#service" class="hover:text-primary">业务领域</a>
+        <a href="#cases" class="hover:text-primary">典型案例</a>
+        <a href="#contact" class="hover:text-primary">联系我们</a>
+        <a href="#contact" class="bg-dark text-primary px-3 py-1.5 rounded hover:bg-primary/10">在线咨询</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden text-dark text-xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
+    <div class="container px-4 py-2 space-y-2">
+      <a href="#home" class="block py-1">首页</a>
+      <a href="#about" class="block py-1">律师简介</a>
+      <a href="#experience" class="block py-1">教育背景</a>
+      <a href="#service" class="block py-1">业务领域</a>
+      <a href="#cases" class="block py-1">典型案例</a>
+      <a href="#contact" class="block py-1">联系我们</a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-16">
+
+<!-- 在线咨询（顶部） -->
+<section id="contact" class="py-4 bg-white">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-5 rounded-lg shadow-sm space-y-4">
+        <h2 class="text-lg font-bold mb-1 text-center">联系我们</h2>
+        <div class="flex items-start gap-3">
+          <i class="fa fa-phone text-primary text-xl mt-1"></i>
+          <div>
+            <h4 class="font-bold">电话/微信</h4>
+            <p class="text-muted">15121030863</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i class="fa fa-wechat text-primary text-xl mt-1"></i>
+          <div>
+            <h4 class="font-bold">微信公众号</h4>
+            <p class="text-muted">一二之间Alt</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <i class="fa fa-envelope text-primary text-xl mt-1"></i>
+          <div>
+            <h4 class="font-bold">邮箱</h4>
+            <p class="text-muted">hantulawfirm@sina.com</p>
+          </div>
+        </div>
+        <!-- 已移动到这里的办公地址 + 全国办案地点 -->
+        <div class="flex items-start gap-3">
+          <i class="fa fa-map-marker text-primary text-xl mt-1"></i>
+          <div>
+            <h4 class="font-bold">办公地址</h4>
+            <a href="https://ditu.amap.com/search?query=天津市滨海新区泰达新天地A2栋10层翰图律所" 
+               target="_blank" 
+               class="text-primary underline hover:no-underline">
+              天津市滨海新区泰达新天地A2栋10层翰图律所
+            </a>
+            <p class="text-muted mt-1">全国办案，重点工作区域：天津、上海、湖北及周边省市</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-lg shadow-sm flex flex-col justify-center items-center text-center space-y-3">
+        <h3 class="font-bold">线上咨询</h3>
+        <p class="text-xs text-muted">
+          添加微信请主动说明：<br/>
+          姓名、电话、案件经过、您的诉求
+        </p>
+        <button id="copyWechat" class="bg-dark text-primary px-6 py-2 rounded w-full">
+          复制微信号 打开微信咨询
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 首页横幅 -->
+<section id="home" class="bg-white py-4 text-center">
+  <div class="container mx-auto px-4">
+    <h1 class="text-xl md:text-2xl font-bold mb-2">胡涛律师Alt<br/>企业合规 • 场景化争议解决 • 强制执行</h1>
+    <p class="text-muted max-w-3xl mx-auto mb-3 text-sm">
+      华东政法大学、中国民航大学双法学 | 企业法务、出庭律师双业务背景 | 中英日三语
+    </p>
+  </div>
+</section>
+
+<!-- 律师简介 -->
+<section id="about" class="py-4">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="text-center mb-4">
+      <h2 class="text-lg md:text-xl font-bold">胡律师简介</h2>
+      <p class="text-muted text-xs">LAWER PROFILE</p>
+    </div>
+    <div class="bg-white rounded-lg p-4 shadow-sm">
+      <p class="mb-2 font-bold text-primary">胡涛 | 专职律师</p>
+      <ul class="space-y-1 text-muted text-sm">
+        <li>• 执业证号：11201202110308417</li>
+        <li>• 专业领域：企业合规 • 争议解决 • 强制执行</li>
+        <li>• 具有证券业从业人员资格</li>
+      </ul>
+      <div class="h-px bg-gray-200 my-3"></div>
+      <p class="text-muted text-sm leading-relaxed">
+        胡律师系天津律师协会国际投资及贸易委员会委员，天津市滨海新区律工委自贸专业委员会委员、涉外及海事海商专业委员会委员，中华全国律师协会、天津市律师协会、中国法学会、中国国际经济法学会、中国航空法学研究会及北京航空法学会会员，中国航空器拥有者及驾驶员协会首批预备调解员。
+      </p>
+      <div class="h-px bg-gray-200 my-3"></div>
+      <p class="text-muted text-sm leading-relaxed">
+        胡律师拥有公司法务、出庭律师双重经验，擅长在复杂商事诉讼中快速厘清核心法律问题，以商业思维提供专业高效解决方案。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 教育背景 -->
+<section id="experience" class="py-4 bg-white">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="text-center mb-4">
+      <h2 class="text-lg md:text-xl font-bold">教育背景</h2>
+      <p class="text-muted text-xs">EDUCATION</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-4 rounded-lg shadow-sm bg-secondary">
+        <h3 class="font-bold mb-1">本科</h3>
+        <p class="text-muted text-sm">华东政法大学国际法学院 | 法学学士</p>
+      </div>
+      <div class="p-4 rounded-lg shadow-sm bg-secondary">
+        <h3 class="font-bold mb-1">硕士</h3>
+        <p class="text-muted text-sm">中国民航大学法学院 | 法学硕士</p>
+      </div>
+    </div>
+    <div class="mt-4 p-4 bg-secondary rounded-lg shadow-sm">
+      <h3 class="font-bold mb-1">主要经历</h3>
+      <p class="text-muted text-sm">
+        曾任跨国公司法务经理，负责国际贸易相关诉讼、仲裁及跨境执行<br>
+        现专注企业合规、场景化争议解决、强制执行
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 业务领域（按图片调整图标对应关系） -->
+<section id="service" class="py-4">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center mb-4">
+      <h2 class="text-lg md:text-xl font-bold">业务领域</h2>
+      <p class="text-muted text-xs">PRACTICE AREAS</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <!-- 企业合规 - 法槌图标 -->
+      <div class="bg-white p-4 rounded-lg card-hover">
+        <i class="fa fa-shield text-primary text-2xl mb-2"></i>
+        <h3 class="text-base font-bold">企业合规</h3>
+        <p class="text-muted text-xs">公司治理、合规体系、合同审查</p>
+      </div>
+      <!-- 国际贸易 - 天平图标 -->
+      <div class="bg-white p-4 rounded-lg card-hover">
+        <i class="fa fa-globe text-primary text-2xl mb-2"></i>
+        <h3 class="text-base font-bold">国际贸易</h3>
+        <p class="text-muted text-xs">跨境贸易合规、国际货物买卖、外贸风控</p>
+      </div>
+      <!-- 知识产权 - 灯泡图标 -->
+      <div class="bg-white p-4 rounded-lg card-hover">
+        <i class="fa fa-lightbulb-o text-primary text-2xl mb-2"></i>
+        <h3 class="text-base font-bold">知识产权</h3>
+        <p class="text-muted text-xs">专利、商标、著作权、商业秘密</p>
+      </div>
+      <!-- 争议解决 - 盾牌图标 -->
+      <div class="bg-white p-4 rounded-lg card-hover">
+        <i class="fa fa-gavel text-primary text-2xl mb-2"></i>
+        <h3 class="text-base font-bold">争议解决</h3>
+        <p class="text-muted text-xs">民商事诉讼、仲裁、再审、执行</p>
+      </div>
+      <!-- 商事仲裁 - 地球图标 -->
+      <div class="bg-white p-4 rounded-lg card-hover">
+        <i class="fa fa-balance-scale text-primary text-2xl mb-2"></i>
+        <h3 class="text-base font-bold">商事仲裁</h3>
+        <p class="text-muted text-xs">中国贸仲、天津仲裁委、跨境仲裁</p>
+      </div>
+      <!-- 强制执行 - 勾选框图标 -->
+      <div class="bg-white p-4 rounded-lg card-hover">
+        <i class="fa fa-check-square-o text-primary text-2xl mb-2"></i>
+        <h3 class="text-base font-bold">强制执行</h3>
+        <p class="text-muted text-xs">裁判执行、财产查控、跨境执行</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 典型案例（左右两列） -->
+<section id="cases" class="py-4 bg-white">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="text-center mb-4">
+      <h2 class="text-lg md:text-xl font-bold">典型案例</h2>
+      <p class="text-muted text-xs">REPRESENTATIVE CASES</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-4">
+        <div>
+          <h3 class="text-base font-bold mb-2 border-l-4 border-primary pl-2">一、法律顾问</h3>
+          <ul class="text-muted text-xs space-y-1 pl-3">
+            <li>• 香港某化学有限公司       法律顾问</li>
+            <li>• 天津某食品开发有限公司 法律顾问</li>
+            <li>• 天津某仓储服务有限公司 法律顾问</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-base font-bold mb-2 border-l-4 border-primary pl-2">二、国际仲裁</h3>
+          <ul class="text-muted text-xs space-y-1 pl-3">
+            <li>• 香港某实业公司与丹东某镁业公司 中国贸仲仲裁案</li>
+            <li>• 香港某实业公司与孟加拉国某国际公司 中国贸仲仲裁案</li>
+            <li>• 香港某化学有限公司与加拿大某食品公司 中国贸仲仲裁案及跨境执行</li>
+          </ul>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div>
+          <h3 class="text-base font-bold mb-2 border-l-4 border-primary pl-2">三、民商事诉讼</h3>
+          <ul class="text-muted text-xs space-y-1 pl-3">
+            <li>• 天津某文化传媒公司与主播经纪合同纠纷</li>
+            <li>• 天津某国际货运代理公司运输合同纠纷</li>
+            <li>• 陈某与孙某股东知情权及股权转让纠纷</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-base font-bold mb-2 border-l-4 border-primary pl-2">四、刑事辩护</h3>
+          <ul class="text-muted text-xs space-y-1 pl-3">
+            <li>• 刘某诈骗罪案</li>
+            <li>• 唐某帮信罪案</li>
+            <li>• 刘某受贿罪案</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="bg-dark text-primary py-4">
+  <div class="container mx-auto px-4 text-center">
+    <p class="text-sm">胡涛律师Alt © 2026 All Rights Reserved</p>
+    <p class="text-gray-500 text-xs mt-1">企业合规 | 场景化争议解决 | 强制执行</p>
+  </div>
+</footer>
+
+<script>
+  // 移动端菜单
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  
+  // 平滑滚动
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  // 复制微信号 + 打开微信
+  const copyBtn = document.getElementById('copyWechat');
+  copyBtn.addEventListener('click', function() {
+    const wechat = '15121030863';
+    navigator.clipboard.writeText(wechat).then(() => {
+      alert('已复制微信号：'+ wechat +'\n请打开微信添加好友咨询！\n\n添加时请备注：姓名+电话+案件诉求');
+      window.location.href = 'weixin://';
+    }).catch(() => {
+      alert('请添加微信：15121030863 咨询胡律师');
+    });
+  });
+</script>
+</body>
+</html>
